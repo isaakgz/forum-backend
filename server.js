@@ -6,7 +6,7 @@ const questionRouter = require("./server/api/question/Question.router");
 const answerRouter = require("./server/api/answer/answer.router");
 const app = express();
 const pool = require("./server/config/dbConfig");
-const port = process.env.PORT;
+const port = process.env.PORT || 80;
 
 app.use(cors()); //middleware
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +18,6 @@ app.use("/api/questions", questionRouter);
 
 app.use("/api/answers", answerRouter);
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`listing on port ${port}`);
 });

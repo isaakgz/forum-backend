@@ -1,4 +1,5 @@
 const mysql = require("mysql2");
+require("dotenv").config();
 
 //Create the connection pool. The pool-specific settings are the defaults on local server
 // const pool = mysql.createPool({
